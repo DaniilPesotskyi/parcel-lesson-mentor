@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "parcel-lesson-mentor",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://DaniilPesotskyi.github.io/parcel-lesson-mentor",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /parcel-lesson-mentor/"
   },
   "repository": {
     "type": "git",
