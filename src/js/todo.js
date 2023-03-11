@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from './refs';
 import storage from './storage';
 
@@ -34,12 +35,13 @@ refs.form.addEventListener('submit', handleSubmit);
 function handleSubmit(e) {
   e.preventDefault();
 
-  if (todo.text === '' || todo.priority === '') {
-    alert('Заповніть усі поля!');
+  if (todo.text === '' || !todo.priority) {
+    Notify.failure('Усі поля повинні бути заповнені');
     return;
   }
 
   console.log(todo);
+  Notify.success('Виконано успішно');
   const markup = `<li>todo:${todo.text}, priority ${todo.priority}</li>`;
   refs.list.insertAdjacentHTML('afterbegin', markup);
   refs.form.reset();
