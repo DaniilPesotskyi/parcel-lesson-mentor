@@ -12,13 +12,13 @@ function onInputValue(e) {
   const { name, value } = e.target;
 
   todo[name] = value;
-  console.log(todo);
+
   storage.save(LOCAL_STORAGE_KEY, todo);
 }
 
 function initTodo() {
   const savedTodo = storage.load(LOCAL_STORAGE_KEY);
-  console.log(savedTodo);
+  
   if (savedTodo) {
     todo = savedTodo;
 
@@ -26,4 +26,20 @@ function initTodo() {
       refs.form.elements[key].value = todo[key];
     }
   }
+}
+
+refs.form.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e) {
+  e.preventDefault();
+
+  if (todo.text === "" || todo.priority === "") {
+    alert("Заповніть усі поля!")
+    return;
+  }
+
+  console.log(todo);
+  refs.form.reset();
+  storage.remove(LOCAL_STORAGE_KEY);
+  Object.keys(todo).forEach(key => todo[key] = "");
 }
