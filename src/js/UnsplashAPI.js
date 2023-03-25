@@ -17,7 +17,7 @@ export class UnsplashAPI {
         throw new Error(response.status);
       }
       return response.json();
-    });
+    }).catch(err => console.log(err));
   }
 
   getImagesBySearch(page) {
