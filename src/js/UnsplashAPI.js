@@ -1,6 +1,6 @@
 export class UnsplashAPI{
-    #BASE_URL: "https://api.unsplash.com/search/photos";
-    #API_KEY: "gcevo00lZKvSMKLnZZJPKYS5xNbpbsP_4i6E-BVlG58";
+    #BASE_URL = "https://api.unsplash.com/search/photos";
+    #API_KEY = "gcevo00lZKvSMKLnZZJPKYS5xNbpbsP_4i6E-BVlG58";
 
 
     getPopularImages(page) {
